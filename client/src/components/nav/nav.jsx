@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -10,18 +10,14 @@ const BasketButton = styled(Button)`
   border: 2px solid red;
 `;
 
-const Nav = () => {
+const Nav = ({ total }) => {
   return (
     <nav className="nav">
       <a type="button" href="#">
-        <Button>
-          New
-        </Button>
+        <Button>New</Button>
       </a>
       <a href="#">
-        <BasketButton>
-        View Basket - £0
-        </BasketButton>
+        <BasketButton>View Basket - £{total}</BasketButton>
       </a>
     </nav>
   );

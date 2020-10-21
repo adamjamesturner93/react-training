@@ -8,7 +8,7 @@ const CardWrapper = styled.article`
   margin: 10px;
 
   &:hover {
-    box-shadow: 4px 8px #000000;
+    box-shadow: 4px 8px 4px #000000;
   }
 `;
 

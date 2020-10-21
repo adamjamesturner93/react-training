@@ -1,23 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Cards, Header, Nav } from "./components";
 
-function App() {
+const App = () => {
+  const [total, setTotal] = useState(0);
   return (
     <React.Fragment>
       <Header />
-      <Nav />
+      <Nav total={total} />
       <main>
         <Cards />
       </main>
       <footer>&copy;2020 - Adam Turner</footer>
     </React.Fragment>
   );
-}
+};
 
 export default App;
-
-// Exercise
-// Header component - TITLE ✅
-// Nav component - Button, `basket: £0` ✅
-// Card Container component ✅

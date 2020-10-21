@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./components/card";
+import styled from "styled-components";
 
 const cards = [
   {
@@ -34,21 +35,27 @@ const cards = [
   },
 ];
 
+const CardsWrapper = styled.section`
+  display: flex;
+  flex-wrap: row;
+  max-width: 100%;
+  flex-wrap: wrap;
+`;
+
 const Cards = () => {
   return (
     <React.Fragment>
       <h2>CARD COMPONENT!</h2>
-      <section>
+      <CardsWrapper>
         {cards.map((card) => (
           <Card item={card} />
         ))}
-      </section>
+      </CardsWrapper>
     </React.Fragment>
   );
 };
 
 export default Cards;
 
-// 1. Loop through cards array
-// 2. Render a component for each one.
-// 3. Render title
+// 1. Add button to Card Component
+// 2. Add product price to view basket section.
