@@ -42,13 +42,13 @@ const CardsWrapper = styled.section`
   flex-wrap: wrap;
 `;
 
-const Cards = () => {
+const Cards = ({ addProduct }) => {
   return (
     <React.Fragment>
       <h2>CARD COMPONENT!</h2>
       <CardsWrapper>
         {cards.map((card) => (
-          <Card item={card} />
+          <Card item={card} addProduct={addProduct} />
         ))}
       </CardsWrapper>
     </React.Fragment>
