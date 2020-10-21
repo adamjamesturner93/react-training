@@ -42,10 +42,14 @@ const CardsWrapper = styled.section`
   flex-wrap: wrap;
 `;
 
+const Title = styled.h2`
+  text-align: center;
+`;
+
 const Cards = ({ addProduct }) => {
   return (
     <React.Fragment>
-      <h2>CARD COMPONENT!</h2>
+      <Title>New in!!</Title>
       <CardsWrapper>
         {cards.map((card) => (
           <Card item={card} addProduct={addProduct} />

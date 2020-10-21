@@ -1,25 +1,38 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const Button = styled.button`
-  border: 2px solid #000000;
-  background-color: #ffffff;
+const Button = styled.a`
+  text-decoration: none;
+  color: black;
+  transition: 0.2s all ease-in;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid black;
+  }
 `;
 
 const BasketButton = styled(Button)`
-  border: 2px solid red;
+  color: darkblue;
+`;
+
+const NavWrapper = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px;
 `;
 
 const Nav = ({ total }) => {
   return (
-    <nav className="nav">
-      <a type="button" href="#">
-        <Button>New</Button>
-      </a>
-      <a href="#">
-        <BasketButton>View Basket - £{total}</BasketButton>
-      </a>
-    </nav>
+    <NavWrapper>
+      <Button type="button" href="#">
+        New
+      </Button>
+      <span>
+        <BasketButton href="#">View Basket</BasketButton> - £{total}
+      </span>
+    </NavWrapper>
   );
 };
 

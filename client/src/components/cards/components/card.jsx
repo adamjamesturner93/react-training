@@ -6,18 +6,27 @@ const CardWrapper = styled.article`
   flex-direction: column;
   width: 200px;
   margin: 20px;
+  align-items: center;
+  justify-content: flex-end;
+`;
 
-  &:hover {
-    box-shadow: 4px 8px 4px #000000;
-  }
+const Details = styled.div`
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  margin-bottom: 20px;
 `;
 
 const Card = ({ item: { image, title, price }, addProduct }) => {
   return (
     <CardWrapper>
       <img src={image} />
-      {title} - &pound;{price}
-      <button onClick={() => addProduct(price)}>Buy Now!!</button>
+      <Details>
+        {title} - &pound;{price}
+        <button onClick={() => addProduct(price)}>Buy Now!!</button>
+      </Details>
     </CardWrapper>
   );
 };
