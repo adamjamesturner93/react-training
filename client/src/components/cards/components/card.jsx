@@ -19,13 +19,20 @@ const Details = styled.div`
   margin-bottom: 20px;
 `;
 
-const Card = ({ item: { image, title, price }, addProduct }) => {
+const Card = ({ item: { imageUri, item, price, stock }, addProduct }) => {
+  const cta =
+    stock > 0 ? (
+      <button onClick={addProduct}>Buy Now!!</button>
+    ) : (
+      <button>Out of stock!</button>
+    );
+
   return (
     <CardWrapper>
-      <img src={image} />
+      <img src={imageUri} />
       <Details>
-        {title} - &pound;{price}
-        <button onClick={() => addProduct(price)}>Buy Now!!</button>
+        {item} - &pound;{price}
+        {cta}
       </Details>
     </CardWrapper>
   );

@@ -23,8 +23,8 @@ const NavWrapper = styled.nav`
   padding: 15px;
 `;
 
-const Nav = ({ total }) => {
-  const basketTotal = total > 0 && `- £${total.toFixed(2)}`
+const Nav = ({ total, cart }) => {
+  const basketTotal = cart.length > 0 && `- ${cart.length} items (£${total.toFixed(2)})`
   return (
     <NavWrapper>
       <Button type="button" href="#">

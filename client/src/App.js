@@ -17,15 +17,30 @@ const FooterWrapper = styled.footer`
 
 const App = () => {
   const [total, setTotal] = useState(0);
+  const [cart, setCart] = useState([]);
 
-  const addProduct = (price) => {
-    setTotal(total + +price);
+  const addProduct = (item) => {
+    setTotal(total + +item.price);
+
+    const newCart = [...cart];
+
+    if (newCart.find((i) => i.id === item.id)) {
+      newCart.find((i) => i.id === item.id).quantity++;
+    } else {
+      newCart.push({
+        ...item,
+        quantity: 1,
+      });
+    }
+
+    setCart(newCart);
+    console.table({ newCart });
   };
 
   return (
     <React.Fragment>
       <Header />
-      <Nav total={total} />
+      <Nav total={total} cart={cart} />
       <MainWrapper>
         <Cards addProduct={addProduct} />
       </MainWrapper>
