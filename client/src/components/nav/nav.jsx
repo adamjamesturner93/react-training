@@ -30,7 +30,7 @@ const Nav = ({ total }) => {
         New
       </Button>
       <span>
-        <BasketButton href="#">View Basket</BasketButton> - £{total}
+        <BasketButton href="#">View Basket</BasketButton> - £{total.toFixed(2)}
       </span>
     </NavWrapper>
   );
