@@ -24,13 +24,14 @@ const NavWrapper = styled.nav`
 `;
 
 const Nav = ({ total }) => {
+  const basketTotal = total > 0 && `- £${total.toFixed(2)}`
   return (
     <NavWrapper>
       <Button type="button" href="#">
         New
       </Button>
       <span>
-        <BasketButton href="#">View Basket</BasketButton> - £{total.toFixed(2)}
+        <BasketButton href="#">View Basket</BasketButton> {basketTotal}
       </span>
     </NavWrapper>
   );
