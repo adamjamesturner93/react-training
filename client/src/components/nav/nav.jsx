@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import {NavLink} from "react-router-dom";
 
 const Button = styled.a`
   text-decoration: none;
@@ -28,10 +29,12 @@ const Nav = ({ total, cart }) => {
   return (
     <NavWrapper>
       <Button type="button" href="#">
-        New
+        Shop Now
       </Button>
       <span>
-        <BasketButton href="#">View Basket</BasketButton> {basketTotal}
+        <NavLink to="/basket">
+          <BasketButton href="#">View Basket</BasketButton> {basketTotal}
+        </NavLink>
       </span>
     </NavWrapper>
   );

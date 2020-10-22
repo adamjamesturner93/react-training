@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {NavLink} from "react-router-dom"
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -11,7 +12,9 @@ const HeaderWrapper = styled.header`
 
 const Header = () => (
   <HeaderWrapper>
-    <h1>Clothes Shop</h1>
+    <NavLink to="/">
+      <h1>Clothes Shop</h1>
+    </NavLink>
   </HeaderWrapper>
 );
 

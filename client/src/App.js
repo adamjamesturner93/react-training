@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Cards, Header, Nav } from "./components";
+import { Cards, Header, Nav, Basket } from "./components";
 import styled from "styled-components";
+import { Route, Switch } from "react-router-dom";
 
 const MainWrapper = styled.main`
   flex-grow: 1;
@@ -42,7 +43,12 @@ const App = () => {
       <Header />
       <Nav total={total} cart={cart} />
       <MainWrapper>
-        <Cards addProduct={addProduct} />
+      <Switch>
+        <Route exact path="/" component={Cards}>
+          <Cards addProduct={addProduct} />
+        </Route>
+        <Route exact path="/basket" component={Basket} />
+      </Switch>
       </MainWrapper>
       <FooterWrapper>&copy;2020 - Adam Turner</FooterWrapper>
     </React.Fragment>
